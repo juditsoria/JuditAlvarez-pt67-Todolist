@@ -18,26 +18,28 @@ const Home = () => {
 
   const handleDelete = (index) => {
     const newArr = [];
-    for (let i = 0; i < taskList.length; i++) {
-      if (i !== index) {
-        newArr.push(taskList[i]);
-      }
+    for (let i = 0; i < taskList.length; i++) { 
+        if (i !== index) { 
+            newArr.push(taskList[i]);
+        }
     }
     setTaskList(newArr);
-  };
+};
 
   return (
-    <div>
-      <input type="text" value={input} onChange={text} />
+    <div className="container w-75 justify-content-center text-center border border-info bg-primary">
+      <h1 className="text-center">Todos</h1>
+      <input type="text" placeholder="What needs to be done?" value={input} onChange={text} />
       <button onClick={addTask}>Add Task</button>
-      <ul className="list-unstyled">
+      <ul className="list-unstyled text-center">
         {taskList.map((item, index) => (
-          <li key={index} className="d-flex align-items-center">
-            <button onClick={() => handleDelete(index)}>x</button>
+          <li key={index} className="taskItem text-center">
+            <button className="buttonDelete"onClick={() => handleDelete(index)}>x</button>
             {item}
           </li>
         ))}
       </ul>
+      {taskList.length === 0 ? (<span>No tasks. Add a task</span>) : <span>{taskList.length} tasks remaining</span>};
     </div>
   );
 };
