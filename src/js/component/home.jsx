@@ -31,15 +31,15 @@ const Home = () => {
       <h1 className="text-center">Todos</h1>
       <input type="text" placeholder="What needs to be done?" value={input} onChange={text} />
       <button onClick={addTask}>Add Task</button>
-      <ul className="list-unstyled text-center">
+      <ul className="list-unstyled text-center mt-4 me-5">
         {taskList.map((item, index) => (
-          <li key={index} className="taskItem text-center">
-            <button className="buttonDelete  btn btn-danger mx-2"onClick={() => handleDelete(index)}>x</button>
+          <li key={index} className="taskItem text-center me-5">
+            <button className="buttonDelete  btn btn-danger "onClick={() => handleDelete(index)}>x</button>
             {item}
           </li>
         ))}
       </ul>
-      {taskList.length === 0 ? (<span>No tasks. Add a task</span>) : <span>{taskList.length} tasks remaining</span>};
+      {taskList.length === 0 ? (<span className="me-5">No tasks. Add a task</span>) : <span className="me-5">{taskList.length} tasks remaining</span>};
     </div>
   );
 };
