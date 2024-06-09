@@ -27,7 +27,7 @@ const Home = () => {
 };
 
   return (
-    <div className="container w-75 justify-content-center text-center border border-info bg-primary">
+    <div className="container justify-content-center text-center border border-info bg-primary">
       <h1 className="text-center">Todos</h1>
       <input type="text" placeholder="What needs to be done?" value={input} onChange={text} />
       <button onClick={addTask}>Add Task</button>
