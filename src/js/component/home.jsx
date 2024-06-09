@@ -34,7 +34,7 @@ const Home = () => {
       <ul className="list-unstyled text-center">
         {taskList.map((item, index) => (
           <li key={index} className="taskItem text-center">
-            <button className="buttonDelete"onClick={() => handleDelete(index)}>x</button>
+            <button className="buttonDelete  btn btn-danger mx-2"onClick={() => handleDelete(index)}>x</button>
             {item}
           </li>
         ))}
